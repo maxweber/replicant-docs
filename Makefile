@@ -28,7 +28,7 @@ test:
 autotest:
 	LOG_LEVEL=warn clojure -M:dev:test -m kaocha.runner --watch
 
-preview:
+preview: tailwind
 	clojure -M:build:dev -m figwheel.main -bo dev
 	clojure -M:dev -e "(powerpack.dev/start)"
 
