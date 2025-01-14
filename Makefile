@@ -28,4 +28,8 @@ test:
 autotest:
 	LOG_LEVEL=warn clojure -M:dev:test -m kaocha.runner --watch
 
+preview:
+	clojure -M:build -m figwheel.main -bo dev
+    clojure -M:dev -e "(powerpack.dev/start)"
+
 .PHONY: tailwind clean deploy test autotest
