@@ -29,8 +29,10 @@ autotest:
 	LOG_LEVEL=warn clojure -M:dev:test -m kaocha.runner --watch
 
 preview:
+	npm install
 	npx tailwindcss -i ./src/main.css -o ./resources/public/tailwind.css
 	clojure -M:build:dev -m figwheel.main -bo dev
 	clojure -M:dev -e "(powerpack.dev/start)"
+	echo "open http://localhost:4444"
 
 .PHONY: tailwind clean deploy test autotest
